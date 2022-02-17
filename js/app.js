@@ -1,3 +1,6 @@
+//#region task 07 part
+
+
 //array that holds all my employee
 allEmployees = [];
 
@@ -73,13 +76,46 @@ function renderAllEmployees(){
   }
 }
 
-
-
-
-
-
-
-
 renderAllEmployees();
+
+//#endregion
+
+
+
+//#region Task 09 setup
+
+
+function saveData(){
+
+  //first we turn our objects into string form!
+  let formattedData = JSON.stringify(allEmployees);
+
+  //we set keyword employees to formattedData
+  localStorage.setItem("employees", formattedData);
+
+
+}
+
+
+function getData(){
+
+  //"employees" here is the key to get back the stringified data
+  let returnedData = localStorage.getItem("employees")
+
+  //now we convert back from string to object form
+
+  let parsedData = JSON.parse(returnedData);
+
+}
+
+
+
+
+
+
+
+
+
+//#endregion
 
 
