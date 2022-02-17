@@ -16,6 +16,7 @@ function Employee(id, name, department, level, image){
   allEmployees.push(this);
 }
 
+
 //My prototype to generate salary data
 Employee.prototype.employeeSalary = function(){
 
@@ -38,6 +39,21 @@ Employee.prototype.employeeSalary = function(){
 
 }
 
+//loop to give salaries to all employees
+for (let i = 0; i < allEmployees.length; i++) {
+  allEmployees[i].employeeSalary();
+}
+
+
+//prototype function to render employee
+Employee.prototype.renderEmployee = function(){
+
+  let renderEmployeeOutput = ("<b><u>Name:</u></b> " + this.employeeName + ". " + "&nbsp;&nbsp;" + " <b><u>Salary:</u></b> " + this.employeeSalary()  + "." + "<br><br>" )
+
+  document.write(renderEmployeeOutput);
+
+}
+
 //function to return a random number
 function getRandomNumberBetween(min,max){
   return Math.floor(Math.random()*(max-min+1)+min);
@@ -53,69 +69,13 @@ let emp06 = new Employee(1005, "Rana Saleh", "Development", "Junior", "randomURL
 let emp07 = new Employee(1006, "Hadi Ahmad", "Finance", "Mid-Senior", "randomURL");
 
 
-
-//loop to give salaries to all employees
+//loop to render all employees
 for (let i = 0; i < allEmployees.length; i++) {
-  allEmployees[i].employeeSalary();
-}
-
-
-//RENDER
-//Loop to print all employees
-function renderAllEmployees(){
-
-  for (let i = 0; i < allEmployees.length; i++) {
-    //&nbsp; this is a single non breaking space in document.write
-    //&nbsp;&nbsp; this is how you chain it, make sure it's in " "
-
-
-    let output = ("<b><u>Name:</u></b> " + allEmployees[i].employeeName + ". "+ "&nbsp;&nbsp;" + " <b><u>Salary:</u></b> " + allEmployees[i].employeeSalary + "." + "<br><br>");
-
-    document.write(output);
-    
-  }
-}
-
-renderAllEmployees();
-
-//#endregion
-
-
-
-//#region Task 09 setup
-
-
-function saveData(){
-
-  //first we turn our objects into string form!
-  let formattedData = JSON.stringify(allEmployees);
-
-  //we set keyword employees to formattedData
-  localStorage.setItem("employees", formattedData);
-
-
-}
-
-
-function getData(){
-
-  //"employees" here is the key to get back the stringified data
-  let returnedData = localStorage.getItem("employees")
-
-  //now we convert back from string to object form
-
-  let parsedData = JSON.parse(returnedData);
-
+  allEmployees[i].renderEmployee();
 }
 
 
 
 
-
-
-
-
-
-//#endregion
 
 
