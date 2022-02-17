@@ -9,3 +9,11 @@ footer{
 footer p{
   text-align: center;
 }
+
+table {
+  border: 2px solid rosybrown;
+}
+
+table th{
+  border: 1px solid black;
+}
