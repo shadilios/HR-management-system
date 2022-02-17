@@ -1,3 +1,6 @@
+//#region task 07 part
+
+
 //array that holds all my employee
 allEmployees = [];
 
@@ -70,6 +73,7 @@ let emp07 = new Employee(1006, "Hadi Ahmad", "Finance", "Mid-Senior", "randomURL
 for (let i = 0; i < allEmployees.length; i++) {
   allEmployees[i].renderEmployee();
 }
+
 
 
 
